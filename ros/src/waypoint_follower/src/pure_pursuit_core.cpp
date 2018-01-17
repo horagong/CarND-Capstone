@@ -77,7 +77,7 @@ void PurePursuit::calcLookaheadDistance(int waypoint)
                       : ld > maximum_lookahead_distance ? maximum_lookahead_distance
                       : ld ;
 
-  ROS_INFO("lookahead distance: %f",lookahead_distance_);
+  //ROS_INFO("lookahead distance: %f",lookahead_distance_);
 
   return ;
 }
@@ -97,14 +97,14 @@ double PurePursuit::calcCurvature(geometry_msgs::Point target) const
     else
       kappa = -KAPPA_MIN_;
   }
-  ROS_INFO_STREAM("kappa :" << kappa);
+  //ROS_INFO_STREAM("kappa :" << kappa);
   return kappa;
 }
 
 // linear interpolation of next target
 bool PurePursuit::interpolateNextTarget(int next_waypoint, geometry_msgs::Point *next_target) const
 {
-  constexpr double ERROR = pow(10, -5);  // 0.00001
+  constexpr double ERROR = 0.00001; //pow(10, -5);  // 0.00001
 
   int path_size = static_cast<int>(current_waypoints_.getSize());
   if (next_waypoint == path_size - 1)
@@ -336,7 +336,7 @@ geometry_msgs::TwistStamped PurePursuit::outputTwist(geometry_msgs::Twist t) con
 
 
   double a = v * omega;
-  ROS_INFO("lateral accel = %lf", a);
+  //ROS_INFO("lateral accel = %lf", a);
 
   twist.twist.linear.x = fabs(a) > g_lateral_accel_limit ? max_v
                     : v;
@@ -349,13 +349,13 @@ geometry_msgs::TwistStamped PurePursuit::go()
 {
   if(!pose_set_ || !waypoint_set_ || !velocity_set_){
     if(!pose_set_) {
-       ROS_WARN("position is missing");
+       //ROS_WARN("position is missing");
      }
      if(!waypoint_set_) {
-       ROS_WARN("waypoint is missing");
+       //ROS_WARN("waypoint is missing");
      }
      if(!velocity_set_) {
-       ROS_WARN("velocity is missing");
+       //ROS_WARN("velocity is missing");
     }
     return outputZero();
   }

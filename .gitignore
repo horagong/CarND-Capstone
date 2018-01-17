@@ -1,6 +1,15 @@
+.gitignore
+*.bag
+*.record
 *.py[cod]
-
+*.pdf
+*.ipynb
+.DS_Store
 build
 devel
-
+mac_sys_int
+test.py
 profile.tmp
+visualization_utils.py
+traffic_light_bag_files
+train_image

@@ -4,6 +4,7 @@
 
 THIS_DIR="$(cd "$(dirname "$0")" && pwd -P && cd - > /dev/null)"
 USER_PROFILE="$THIS_DIR/profile.tmp"
+echo "simulator path file: USER_PROFILE=$USER_PROFILE"
 
 if [ ! -f "$USER_PROFILE" ];
   then
@@ -16,4 +17,5 @@ if [ ! -f "$USER_PROFILE" ];
     unity_path=$(cat "$USER_PROFILE")
 fi
 
+echo "run $unity_path"
 $unity_path

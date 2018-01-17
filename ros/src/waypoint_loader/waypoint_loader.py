@@ -30,7 +30,7 @@ class WaypointLoader(object):
         if os.path.isfile(path):
             waypoints = self.load_waypoints(path)
             self.publish(waypoints)
-            rospy.loginfo('Waypoint Loded')
+            rospy.loginfo('Waypoint Loaded')
         else:
             rospy.logerr('%s is not a file', path)
 
@@ -63,7 +63,7 @@ class WaypointLoader(object):
     def decelerate(self, waypoints):
         last = waypoints[-1]
         last.twist.twist.linear.x = 0.
-        for wp in waypoints[:-1][::-1]:
+        for i, wp in enumerate(waypoints[:-1][::-1]):
             dist = self.distance(wp.pose.pose.position, last.pose.pose.position)
             vel = math.sqrt(2 * MAX_DECEL * dist)
             if vel < 1.:
@@ -77,6 +77,14 @@ class WaypointLoader(object):
         lane.header.stamp = rospy.Time(0)
         lane.waypoints = waypoints
         self.pub.publish(lane)
+        rospy.loginfo("base_waypoints=%s", len(waypoints))
+        '''
+        for i, wp in enumerate(waypoints):
+            rospy.loginfo("vel=%s at (%s, %s), [%s]"
+                , wp.twist.twist.linear.x
+                , wp.pose.pose.position.x
+                , wp.pose.pose.position.y, i)
+        '''
 
 
 if __name__ == '__main__':
