@@ -132,7 +132,7 @@ class TLDetector(object):
         self.publish_traffic()
         # there is no topic on camera on/off, so flag here. 
         # (not accurate. just for test toggling camera on/off)
-        self.has_image = False
+        #self.has_image = False
 
 
     def get_closest_waypoint(self, pose, start_wp_idx=0):

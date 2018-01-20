@@ -185,12 +185,12 @@ class WaypointUpdater(object):
         waypoints = []
         for i in range(next_wp_idx, end_wp_idx + 1):
             waypoints.append(self.base_waypoints[i])
-            #'''
+            '''
             if self.waypoint_velocity_updated:
                 rospy.loginfo('updated vel: x=%s, vel=%s'
                     , self.base_waypoints[i].pose.pose.position.x
                     , self.base_waypoints[i].twist.twist.linear.x)
-            #'''
+            '''
 
         lane.waypoints = waypoints
         self.final_waypoints_pub.publish(lane)
