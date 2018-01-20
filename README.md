@@ -1,5 +1,14 @@
 # Self Driving Car System Integration
 
+## Team Dragon
+Name | Email
+-----|------
+Waleed Mansoor | waleed.mansoor@gmail.com
+Jaewoo Park	| jaewoopark91@gmail.com
+Sasha Jaksic | dzx303@gmail.com
+Dominik Marquardt	| dominik.marquardt@outlook.de
+Juil O | horagong@gmail.com
+
 ## ROS native installation on mac
 This project runs with ROS. Usually ROS is installed on Linux. So we can use linux VM in mac. But when I started this project on VM, I realized that it was so slow that installing on mac natively would be better.
 
