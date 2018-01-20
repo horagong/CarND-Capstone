@@ -1,11 +1,15 @@
 # Self Driving Car System Integration
 
-## ROS install on mac
-This project runs with ROS. Usually ROS is installed on Linux. So we can use linux VM in mac. But when I started this project on VM, I realized that it was so slow that installing on mac nativly would be better.
+## ROS native installation on mac
+This project runs with ROS. Usually ROS is installed on Linux. So we can use linux VM in mac. But when I started this project on VM, I realized that it was so slow that installing on mac natively would be better.
 
-ROS can be [installed on mac](http://wiki.ros.org/kinetic/Installation/OSX/Homebrew/Source), but they say, "This is a work in progress! It really won't work right now..." However, I could run this project with ROS natively installed on mac with a few change.
+ROS can be [installed on mac](http://wiki.ros.org/kinetic/Installation/OSX/Homebrew/Source) and there is a [script](https://github.com/mikepurvis/ros-install-osx) for it. But ROS page say, "This is a work in progress! It really won't work right now..." 
+
+When I tested turtlesim and simple_arm packages after installing, it didn't work as they said. However, I could run the packages as well as this project with a few changes.
 * Shared libraries were installed with the suffix '.so' not '.dylib'. Change the suffix.
-* close_half_closed_sockets() in rosmaster/util.py uses TCP_INFO which is not supported on mac. Just comment out this function.
+* close_half_closed_sockets() in rosmaster/util.py uses TCP_INFO which is not implemented on mac. Just comment out this function.
+
+For this project, you also need to install some msg packages like Dataspeed msg. 
 
 ## System Architecture
 This system has three main parts.
@@ -100,9 +104,6 @@ It runs well keeping the lane and according to traffic light with the camera off
 It works well even when I speed up to 80km/h with the camera off. In that case, the car goes a little away his lane at the rapid corner. I think it could need another pid controller for yaw.
 
 
-
-
----
 ---
 This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
 
