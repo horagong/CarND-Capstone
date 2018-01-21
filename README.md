@@ -9,6 +9,13 @@ Sasha Jaksic | dzx303@gmail.com
 Dominik Marquardt	| dominik.marquardt@outlook.de
 Juil O | horagong@gmail.com
 
+##
+<div align=center>
+<video width=640 controls>
+<source src=imgs/car.mov>
+</video>
+</div>
+
 ## ROS native installation on mac
 This project runs with ROS. Usually ROS is installed on Linux. So we can use linux VM in mac. But when I started this project on VM, I realized that it was so slow that installing on mac natively would be better.
 
