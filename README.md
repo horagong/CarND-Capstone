@@ -11,9 +11,7 @@ Juil O | horagong@gmail.com
 
 ##
 <div align=center>
-<video width=640 controls>
-<source src=imgs/car.mov>
-</video>
+<img width=640 src=imgs/car.gif>
 </div>
 
 ## ROS native installation on mac
