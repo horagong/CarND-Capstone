@@ -9,11 +9,6 @@ Sasha Jaksic | dzx303@gmail.com
 Dominik Marquardt	| dominik.marquardt@outlook.de
 Juil O | horagong@gmail.com
 
-##
-<div align=center>
-<img width=640 src=imgs/car.gif>
-</div>
-
 ## ROS native installation on mac
 This project runs with ROS. Usually ROS is installed on Linux. So we can use linux VM in mac. But when I started this project on VM, I realized that it was so slow that installing on mac natively would be better.
 
@@ -24,6 +19,9 @@ When I tested turtlesim and simple_arm packages after installing, it didn't work
 * close_half_closed_sockets() in rosmaster/util.py uses TCP_INFO which is not implemented on mac. Just comment out this function.
 
 For this project, you also need to install some msg packages like Dataspeed msg. 
+<div align=center>
+<img width=640 src=imgs/car.gif>
+</div>
 
 ## System Architecture
 This system has three main parts.
