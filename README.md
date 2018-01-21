@@ -113,9 +113,6 @@ accel = self.velocity_lowpass.filt(accel)
 ## Future work
 It runs well keeping the lane and according to traffic light with the camera off. When the camera is on, the simulator needs for too much resources in my machine. So it cannot run well for lagging. I think it should be solved in the simulator.
 
-It works well even when I speed up to 80km/h with the camera off. In that case, the car goes a little away his lane at the rapid corner. I think it could need another pid controller for yaw.
-
-
 ---
 This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
 
